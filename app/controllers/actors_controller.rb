@@ -6,10 +6,10 @@ class ActorsController < ApplicationController
     matching_records = Actor.where({ :id => act_id })
     the_actor = matching_records.at(0)
     #Overwrite each column with the values from user inputs
-    the_actor.name = params.fetch("query_name")
-    the_actor.dob = params.fetch("query_dob")
-    the_actor.bio = params.fetch("query_bio")
-    the_actor.image = params.fetch("query_image")
+    the_actor.name = params.fetch("the_name")
+    the_actor.dob = params.fetch("the_dob")
+    the_actor.bio = params.fetch("the_bio")
+    the_actor.image = params.fetch("the_image")
     #Save the new inputs
     the_actor.save
     #Redirect
@@ -18,10 +18,10 @@ class ActorsController < ApplicationController
 
   def create
     act = Actor.new
-    act.name = params.fetch("query_name")
-    act.dob = params.fetch("query_dob")
-    act.bio = params.fetch("query_bio")
-    act.image = params.fetch("query_image")
+    act.name = params.fetch("the_name")
+    act.dob = params.fetch("the_dob")
+    act.bio = params.fetch("the_bio")
+    act.image = params.fetch("the_image")
     
     act.save
 
